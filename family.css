@@ -1,4 +1,6 @@
-.Famlist{
+.FamList{
+	width: 150px;
+	height: 350px;
 	display: block;
 	position: absolute;
 }
