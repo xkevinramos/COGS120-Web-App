@@ -19,17 +19,25 @@ body{
 	color: white;
 	text-align: center;
 	opacity: 10%;
-	border-radius: 15px;
 	border: none;
 	text-decoration: none;
-	background: -webkit-linear-gradient(-80deg, black 0%, white 100%);
+	background-image: -webkit-radial-gradient(black 0%, white 150%);
+	transition: 0.3s ease-in-out;
 	outline: none;
 	cursor: pointer;
 	z-index: 2;
 }
 
 .buttonToList:hover{
-	color: black;
+	color: yellow;
+	background-size: 100%;
+	animation: gradShift .1s ease-in-out .1s forwards;
+}
+
+@keyframes gradShift{
+	0% {background-size: 100%;}
+	50% {background-size: 125%;}
+	100% {background-size: 150%;}
 }
 
 .arrowDown{
@@ -42,4 +50,15 @@ body{
 	border-radius: 0.4em;
 	transform: rotate(135deg) translate(0px, 50px);
 	display: relative;
+}
+
+.arrowDown:hover{
+	border-color: white;
+	transition: .5s ease-in-out;
+}
+
+.itemList{
+	width: 100%;
+	background-color: white;
+	border-radius: 0px 0px 5px 5px;
 }
