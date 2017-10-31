@@ -6,7 +6,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans|Raleway">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 		<style type="text/css">
 			@import url("css/family.css");
 		</style>
@@ -14,11 +15,40 @@
 
 	<body>
 		<div class = "FamList">
-			<button >My Personal List</button>
-			<button>My Wife</button>
-			<button>Jeryl</button>
-			<button>Lisa</button>
-			<button>Buddy: Dog</button>
+			<div class = "buttonToList">My Personal List
+				<div class = "arrowDown"></div>
+			</div>
+				<div class = "itemList" id = "list1">
+					Food
+				</div>
+			<div class = "buttonToList">My Wife
+				<div class = "arrowDown"></div>
+			</div>
+				<div class = "itemList" id = "list2">
+					Food
+				</div>
+			<div class = "buttonToList">John
+				<div class = "arrowDown"></div>
+			</div>
+				<div class = "itemList" id = "list3">
+					Food
+				</div>
+			<div class = "buttonToList">Deryl
+				<div class = "arrowDown"></div>
+			</div>
+				<div class = "itemList" id = "list4">
+					Food
+				</div>
+			<div class = "buttonToList">Buddy: Dog
+				<div class = "arrowDown"></div>
+			</div>
+				<div class = "itemList" id = "list5">
+					Food
+				</div>
 		</div>
 	</body>
+	
+	<script src="//code.jquery.com/jquery-1.12.4.js"></script><script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="accordian.js"></script>
+	
 </html>
