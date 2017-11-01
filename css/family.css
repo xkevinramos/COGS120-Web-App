@@ -2,8 +2,8 @@ body{
 	background-color: #2329d3;
 }
 .FamList{
-	width: 550px;
-	height: 350px;
+	width: 25em;
+	height: 25em;
 	margin: 5% auto auto 5%;
 	display: block;
 	position: relative;
@@ -43,13 +43,23 @@ body{
 .arrowDown{
 	z-index: 3;
 	margin-left: 95%;
-	width: 2em;
-    height: 2em;
-    border-right: 0.5em solid black;
-    border-top: 0.5em solid black;
-	border-radius: 0.4em;
-	transform: rotate(135deg) translate(0px, 50px);
 	display: relative;
+}
+
+.bar1, .bar2{
+	width: 2em;
+    height: .5em;
+	background-color: black;
+	border-radius: 0.5em;
+	transition: 0.5s;
+}
+
+.bar1{
+	transform: rotate(-45deg) translate(-0.55em, -1.15em);
+} 
+
+.bar2{
+	transform: rotate(45deg) translate(-2.25em, 1em);
 }
 
 .arrowDown:hover{
