@@ -2,7 +2,7 @@ body{
 	background-color: #2329d3;
 	z-index: 1;
 }
-.FamList{
+.famList{
 	width: 25em;
 	height: 25em;
 	margin: 5% auto auto 5%;
@@ -34,7 +34,7 @@ body{
 	color: yellow;
 }
 
-.buttonToList.selected{
+.buttonToList.activeList{
 	color: yellow;
 	background-size: 150%;
 }
@@ -71,16 +71,39 @@ body{
 	transform: rotate(45deg) translate(-2.25em, 1em);
 }
 
+#backBar1, #backBar2{
+	width: 1.5em;
+    height: 0.25em;
+	position: relative;
+	margin-right: 3em;
+}
+
+
 .arrowDown:hover{
 	transition: .5s ease-in-out;
 }
 
 .itemList{
-	display: none;
-	width: 100%;
 	background-color: white;
+	display: none;
 }
 
-.itemList.showList{
-	display: block;
+.button{
+	display: relative;
+	margin: 1em 0em 0em 5em;
+	padding: .5em 1em 2em 0em;
+	width: 5.5em;
+	height: 1.5em;
+	font-size: 2em;
+	text-align: right;
+	border-radius: 1.5em;
+	border: none;
+	color: white;
+	background-image: -webkit-radial-gradient(black 0%, white 150%);
+	transition: 0.3s ease-in-out;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+	color: yellow;
 }
