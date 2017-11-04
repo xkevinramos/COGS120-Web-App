@@ -1,12 +1,11 @@
-//<script src="./node_modules/quagga/quagga.min.js"></script>
-<script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js"></script>
+<script src="Users/Kevin/COGS-120/COGS120-Web-App/node_modules/quagga/dist/quagga.min.js"></script>
 
 Quagga.init({
     inputStream : {
         name : "Live",
         type : "LiveStream",
          // Or '#yourElement' (optional)
-        target: document.querySelector('#yourElement') 
+        target: document.querySelector('#scanner-container') 
     },
     decoder : {
         readers : ["code_128_reader"]
