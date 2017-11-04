@@ -1,4 +1,4 @@
-<script src="Users/Kevin/COGS-120/COGS120-Web-App/node_modules/quagga/dist/quagga.min.js"></script>
+<script src=".//node_modules/quagga/dist/quagga.min.js"></script>
 
 Quagga.init({
     inputStream : {
