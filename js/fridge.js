@@ -1,5 +1,14 @@
-// Dummy list
-var items = ["Fridge Item 1", "Fridge Item 2", "Fridge Item 3"];
+// Generate dummy list
+function genFridge() {
+
+	var items = [];
+
+	for (var i = 0; i < 10; i++) {
+		items.push([i, "Fridge Item " + i]);
+	}
+
+	return items;
+}
 
 $(document).ready(function() {
 
@@ -15,6 +24,7 @@ $(document).ready(function() {
 	// Otherwise, fillLocal storage with the dummy list
 	else {
 		console.log("There are no items!");
+		var items = genFridge();
 		localStorage.setItem("fridge", JSON.stringify(items));
 		fridge = items;
 	}
@@ -24,6 +34,10 @@ $(document).ready(function() {
 
 	// Populate the html element; maybe Handlebars.js might be helpful here?
 	for (var i = 0; i < fridge.length; i++) {
-		fridgeList.append("<li id=item" + i + ">" + fridge[i] + "</li>");
+
+		var qty = fridge[i][0];
+		var item = fridge[i][1];
+
+		fridgeList.append("<li id=fridgeItem" + i + ">" + qty + "\t" + item + "</li>");
 	}
 });

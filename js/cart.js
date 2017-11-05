@@ -1,5 +1,14 @@
-// Dummy list
-var items = ["Cart Item 1", "Cart Item 2", "Cart Item 3"];
+// Generate dummy list
+function genCart() {
+
+	var items = [];
+
+	for (var i = 0; i < 10; i++) {
+		items.push([i, "Cart Item " + i]);
+	}
+
+	return items;
+}
 
 $(document).ready(function() {
 
@@ -15,6 +24,7 @@ $(document).ready(function() {
 	// Otherwise, fill localStorage with the dummy list
 	else {
 		console.log("There are no items!");
+		var items = genCart();
 		localStorage.setItem("cart", JSON.stringify(items));
 		cart = items;
 	}
@@ -24,6 +34,10 @@ $(document).ready(function() {
 
 	// Populate the html element; maybe Handlebars.js might be helpful here?
 	for (var i = 0; i < cart.length; i++) {
-		cartList.append("<li id=item" + i + ">" + cart[i] + "</li>");
+
+		var qty = cart[i][0];
+		var item = cart[i][1];
+
+		cartList.append("<li id=cartItem" + i + ">" + qty + "\t" + item + "</li>");
 	}
 });

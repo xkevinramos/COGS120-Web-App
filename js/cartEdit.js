@@ -16,11 +16,11 @@ $(document).ready(function() {
 			cart = JSON.parse(localCart);
 		}
 
-		cart.push(toAdd);
+		cart.push([1, toAdd]);
 
 		// Get the html element with the id cartList
 		var cartList = $("#cartList");
-		cartList.append("<li id=item" + (cart.length - 1) + ">" + toAdd + "</li>");
+		cartList.append("<li id=cartItem" + (cart.length - 1) + ">" + "1 " + toAdd + "</li>");
 	});
 
 	$("#save").click(function() {
