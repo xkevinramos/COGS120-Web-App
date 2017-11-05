@@ -12,7 +12,7 @@ $(document).ready(function() {
 		cart = JSON.parse(cart);
 	}
 
-	// Otherwise, fillLocal storage with the dummy list
+	// Otherwise, fill localStorage with the dummy list
 	else {
 		console.log("There are no items!");
 		localStorage.setItem("cart", JSON.stringify(items));
