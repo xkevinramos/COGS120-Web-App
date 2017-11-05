@@ -38,6 +38,6 @@ $(document).ready(function() {
 		var qty = fridge[i][0];
 		var item = fridge[i][1];
 
-		fridgeList.append("<li id=fridgeItem" + i + ">" + qty + "\t" + item + "</li>");
+		fridgeList.append("<li id=fridgeItem" + i + ">" + qty + " " + item + "</li>");
 	}
 });

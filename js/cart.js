@@ -38,6 +38,13 @@ $(document).ready(function() {
 		var qty = cart[i][0];
 		var item = cart[i][1];
 
-		cartList.append("<li id=cartItem" + i + ">" + qty + "\t" + item + "</li>");
+		cartList.append("<li id=cartItem" + i + ">" + qty + " " + item + " <button id='btn" + i + "'>&times</button></li>");
+		$("#btn" + i).click(remove);
 	}
 });
+
+function remove() {
+	console.log("Removed item");
+	console.log(this);
+	console.log($(this).parent().remove());
+}
