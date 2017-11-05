@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<style type="text/css">
@@ -16,20 +17,59 @@
 	</head>
 
 	<body>
+		<div class = "buttonGroup">
+			<button class = "changeButtons" id = "backButton">&larr; Back</button>
+			<button class = "changeButtons" id = "addButton">Add List</button>
+			<button class = "changeButtons" id = "removeButton">Remove List</button>
+		</div>
 		<div class = "famList">
-			<!--Button #1-->
-			<div class = "buttonToList">My Personal List
+				<!--This is where the start of panel begins.-->
+					<div class="panelDefault">
+						<div class = "listBox">
+							<a data-toggle="collapse" href="#collapse1">
+								<h4>My Personal List</h4>
+								<div class = "arrowDown" id = "arrow1">
+									<div class = "bar1"></div>
+									<div class = "bar2"></div>
+								</div>
+							</a>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse">
+							<div class="panel-body">Panel Body</div>
+							<button class = "panel-footer">+ Add Item</button>
+						</div>
+					</div>
+				<!--This is where the end of panel arrives.-->
+				<!--Start of next panel-->
+					<div class="panelDefault">
+						<div class = "listBox">
+							<a data-toggle="collapse" href="#collapse2">
+								<h4>My Personal List</h4>
+								<div class = "arrowDown" id = "arrow1">
+									<div class = "bar1"></div>
+									<div class = "bar2"></div>
+								</div>
+							</a>
+						</div>
+						<div id="collapse2" class="panel-collapse collapse">
+							<div class="panel-body">Panel Body</div>
+							<button class = "panel-footer">+ Add Item</button>
+						</div>
+					</div>
+				<!--End of next panel-->
+			</div>
+			<!--Buttons-->
+			<!--<div class = "buttonToList" data-toggle = "itemList" data-target = "#list1" aria-expanded = "false" aria-controls = "list1">
+				My Personal List
 				<div class = "arrowDown" id = "arrow1">
 					<div class = "bar1"></div>
 					<div class = "bar2"></div>
 				</div>
 			</div>
 			<div class = "itemList" id = "list1">
-					Food
+						Food
 			</div>
 			
-			
-			<!--Button #2-->
 			<div class = "buttonToList">My Wife
 				<div class = "arrowDown" id = "arrow2">
 					<div class = "bar1"></div>
@@ -40,7 +80,6 @@
 					Food
 			</div>
 			
-			<!--Button #3-->
 			<div class = "buttonToList">John
 				<div class = "arrowDown" id = "arrow3">
 					<div class = "bar1"></div>
@@ -51,7 +90,6 @@
 					Food
 			</div>
 			
-			<!--Button #4-->
 			<div class = "buttonToList">Deryl
 				<div class = "arrowDown" id = "arrow4">
 					<div class = "bar1"></div>
@@ -62,7 +100,6 @@
 					Food
 			</div>
 			
-			<!--Button #5-->
 			<div class = "buttonToList">Buddy: Dog
 				<div class = "arrowDown" id = "arrow5">
 					<div class = "bar1"></div>
@@ -71,20 +108,18 @@
 			</div>
 			<div class = "itemList" id = "list5">
 					Food
-			</div>
+			</div>-->
 			
 			<!--Back buttion-->
-			<a href = "index.html">
-				<button class = "button">&larr; Back</button>
-			</a>
+			
 		</div>
 		
 	</body>
 	
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="js/accordian.js"></script>
-	<script src="js/loopList.js"></script>
+	<!--<script src="js/loopList.js"></script>-->
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </html>
