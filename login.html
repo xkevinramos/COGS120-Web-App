@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<script>
+		if (!localStorage.getItem("loggedIn")) {
+			console.log("Not logged in!");
+		}
+
+		else {
+			console.log("Logged in!");
+			window.location = "index.html"
+		}
+	</script>
+
+	<div class="container">
+		<div style="text-align: center">
+			<button id="log-in" class="btn btn-primary" style="width: 50%">Log In</button>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/login.js"></script>
+</body>
+
+</html>
