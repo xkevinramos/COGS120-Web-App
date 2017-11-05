@@ -1,29 +1,60 @@
-// Dummy list
-var items = ["Cart Item 1", "Cart Item 2", "Cart Item 3"];
+// Global cart array
+var cart = [];
 
+// Gets called when the document is ready.
 $(document).ready(function() {
 
-	// Retrieve the cart from localStorage
-	var cart = localStorage.getItem("cart");
+	// Retrieves the cart and displays it.
+	retrieveCart();
+});
 
-	// If there are items, parse the items retrieved
-	if (cart) {
+// Helper function that retrieves the cart from localStorage.
+function retrieveCart() {
+
+	// Retrieves the cart from localStorage.
+	var localCart = localStorage.getItem("cart");
+
+	// If there are items, parses the items retrieved.
+	if (localCart && localCart != "[]") {
 		console.log("There are items!");
-		cart = JSON.parse(cart);
+		cart = JSON.parse(localCart);
 	}
 
-	// Otherwise, fill localStorage with the dummy list
+	// Otherwise, fill localStorage with the dummy list.
 	else {
 		console.log("There are no items!");
+		var items = genCart();
 		localStorage.setItem("cart", JSON.stringify(items));
 		cart = items;
 	}
 
-	// Get the html element with the id cartList
+	displayCart();
+}
+
+// Helper function that displays the cart by injecting html.
+function displayCart() {
+
+	// Gets the html element with the id cartList.
 	var cartList = $("#cartList");
 
-	// Populate the html element; maybe Handlebars.js might be helpful here?
+	// Populates the html element; maybe Handlebars.js might be helpful here?
 	for (var i = 0; i < cart.length; i++) {
-		cartList.append("<li id=item" + i + ">" + cart[i] + "</li>");
+
+		var qty = cart[i][0];
+		var item = cart[i][1];
+
+		cartList.append("<li id=cartItem" + i + ">" + qty + " " + item + "</li>");
+	}	
+}
+
+// Generates dummy list.
+function genCart() {
+
+	var items = [];
+
+	for (var i = 0; i < 10; i++) {
+		items.push([i, "Cart Item " + i]);
 	}
-});
+
+	return items;
+}

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 
+<script src="js/auth.js"></script>
+
 <html>
 
 <head>
+	<title>index</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,23 +46,31 @@
 
 		<div class="row">
 			<div class="button-group">
-			<div class="col-sm-12">
-				<a href="cart.html">
-					<button type="button" class="btn btn-primary">Start Shopping</button>
-				</a>
-			</div>
+				<div class="col-sm-12">
+					<a href="cart.html">
+						<button type="button" class="btn btn-primary">Start Shopping</button>
+					</a>
+				</div>
 
-			<div class="col-sm-12">
-				<a href="fridge1.html">
-					<button type="button" class="btn btn-primary">View My Fridge</button>
-				</a>
-			</div>
+				<div class="col-sm-12">
+					<a href="fridge1.html">
+						<button type="button" class="btn btn-primary">View My Fridge</button>
+					</a>
+				</div>
 
-			<div class="col-sm-12">
-				<a href="family.html">
-					<button type="button" class="btn btn-primary">View My Family</button>
-				</a>
-			</div>
+				<div class="col-sm-12">
+					<a href="family.html">
+						<button type="button" class="btn btn-primary">View My Family</button>
+					</a>
+				</div>
+
+				<div class="col-sm-12">
+					<button id="log-out" type="button" class="btn btn-primary">Log Out</button>
+				</div>
+
+				<div class="col-sm-12">
+					<button id="clr" type="button" class="btn btn-primary">[DEV] localStorage.clear( )</button>
+				</div>
 			</div>
 		</div>
 
@@ -67,6 +78,7 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
 </body>
 
 </html>

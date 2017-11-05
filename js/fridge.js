@@ -1,29 +1,60 @@
-// Dummy list
-var items = ["Fridge Item 1", "Fridge Item 2", "Fridge Item 3"];
+// Global fridge array
+var fridge = [];
 
+// Gets called when the document is ready.
 $(document).ready(function() {
 
-	// Retrieve the fridge from localStorage
-	var fridge = localStorage.getItem("fridge");
+	// Retrieves the fridge and displays it.
+	retrieveFridge();
+});
 
-	// If there are items, parse the items retrieved
-	if (fridge) {
+// Helper function that retrieves the fridge from localStorage.
+function retrieveFridge() {
+
+	// Retrieves the fridge from localStorage.
+	var localFridge = localStorage.getItem("fridge");
+
+	// If there are items, parses the items retrieved.
+	if (localFridge && localFridge != "[]") {
 		console.log("There are items!");
-		fridge = JSON.parse(fridge);
+		fridge = JSON.parse(localFridge);
 	}
 
-	// Otherwise, fillLocal storage with the dummy list
+	// Otherwise, fill localStorage with the dummy list.
 	else {
 		console.log("There are no items!");
+		var items = genFridge();
 		localStorage.setItem("fridge", JSON.stringify(items));
 		fridge = items;
 	}
 
-	// Get the html element with the id fridgeList
+	displayFridge();
+}
+
+// Helper function that displays the fridge by injecting html.
+function displayFridge() {
+
+	// Gets the html element with the id fridgeList.
 	var fridgeList = $("#fridgeList");
 
-	// Populate the html element; maybe Handlebars.js might be helpful here?
+	// Populates the html element; maybe Handlebars.js might be helpful here?
 	for (var i = 0; i < fridge.length; i++) {
-		fridgeList.append("<li id=item" + i + ">" + fridge[i] + "</li>");
+
+		var qty = fridge[i][0];
+		var item = fridge[i][1];
+
+		fridgeList.append("<li id=fridgeItem" + i + ">" + qty + " " + item + "</li>");
+	}	
+}
+
+// Generates dummy list.
+function genFridge() {
+
+	var items = [];
+
+	for (var i = 0; i < 10; i++) {
+		items.push([i, "Fridge Item " + i]);
 	}
-});
+
+	return items;
+}
