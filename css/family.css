@@ -93,12 +93,14 @@ body{
 
 .panelDefault, .listBox{
 	background-color: cyan;
+	font-family: 'Montserrat', sans-serif;
 }
 
 a h4{
 	margin: 1em 0em 0.5em 1em;
 	position: relative;
 	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
 }
 
 a h4{
@@ -130,6 +132,7 @@ a h4{
 	transition: 0.3s ease-in-out;
 	text-decoration: none;
 	cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
 }
 
 a:hover{
