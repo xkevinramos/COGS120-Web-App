@@ -32,7 +32,8 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, 
+    height=device-height, initial-scale=1">
     <style>
         /* In order to place the tracking correctly */
         canvas.drawing, canvas.drawingBuffer {
@@ -46,7 +47,7 @@
 <body>
     <!-- Div to show the scanner -->
     <div id="scanner-container"></div>
-    <input type="button" id="btn" value="Click here to scan" />
+    <input type="button" id="btn" value="Click here to scan your item" />
 
     <!-- Include the image-diff library -->
     <!--<script src="quagga.min.js"></script> -->
@@ -145,8 +146,12 @@
             if (_scannerIsRunning) {
                 Quagga.stop();
 		_scannerIsRunning=false;
+		document.getElementById("btn").value = "Click here to scan your item";
+
             } else {
                 startScanner();
+		// change button text
+		document.getElementById("btn").value = "Stop scanning";
             }
         }, false);
     </script>
