@@ -1,6 +1,8 @@
 // Gets called when the document is ready.
 $(document).ready(function() {
 
+	$("#welcome").html("Welcome " + localStorage.getItem("user") + "!");
+
 	// Assigns functionality to the log out button.
 	$("#log-out").click(function() {
 
@@ -22,7 +24,7 @@ $(document).ready(function() {
 
 		console.log("Logging out!")
 		localStorage.removeItem("loggedIn");
-		// window.location = "login.html"
+		window.location = "login.html"
 	});
 
 	// Assigns functionality to the localStorage.clear() button.
