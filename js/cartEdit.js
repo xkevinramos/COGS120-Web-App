@@ -13,23 +13,33 @@ $(document).ready(function() {
 		console.log("Clicked!");
 
 		var toAdd = prompt("Enter an item");
-		if (toAdd != null && toAdd != "") {
-			console.log(toAdd);
-
-			cart.push([1, toAdd]);
-
-			// Gets the html element with the id cartList.
-			var cartList = $("#cartList");
-
-			// Appends the new item to the list.
-			var i = cart.length - 1;
-			cartList.append("<li id=cartItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
-			$("#inc" + i).click(incQty);
-			$("#dec" + i).click(decQty);
+		
+		// Returns if user cancelled.
+		if (toAdd == null) {
+			return;
 		}
-		else if (toAdd != null) {
+
+		// Removes leading and trailing whitespaces.
+		toAdd = toAdd.trim();
+
+		// Returns if user did not enter any non-whitespace characters.
+		if (toAdd === "") {
 			alert("Please enter something valid");
+			return;
 		}
+
+		console.log(toAdd);
+
+		cart.push([1, toAdd]);
+
+		// Gets the html element with the id cartList.
+		var cartList = $("#cartList");
+
+		// Appends the new item to the list.
+		var i = cart.length - 1;
+		cartList.append("<li id=cartItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
+		$("#inc" + i).click(incQty);
+		$("#dec" + i).click(decQty);
 	});
 
 	// Assigns functionality to the save button.
