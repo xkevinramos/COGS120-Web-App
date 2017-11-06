@@ -13,7 +13,7 @@ $(document).ready(function() {
 		console.log("Clicked!");
 
 		var toAdd = prompt("Enter an item");
-		
+
 		// Returns if user cancelled.
 		if (toAdd == null) {
 			return;
