@@ -8,5 +8,5 @@ var toListToNum = document.getElementsByClassName("buttonToList");
 			} else {
 				list.style.display = "none";
 			}
-    	};
+		};
 	}
