@@ -16,16 +16,16 @@ function retrieveFridge() {
 
 	// If there are items, parses the items retrieved.
 	if (localFridge && localFridge != "[]") {
-		console.log("There are items!");
+		console.log("There are items in the fridge!");
 		fridge = JSON.parse(localFridge);
 	}
 
 	// Otherwise, fill localStorage with the dummy list.
 	else {
-		console.log("There are no items!");
-		var items = genFridge();
-		localStorage.setItem("fridge", JSON.stringify(items));
-		fridge = items;
+		console.log("There are no items in the frige!");
+		// var items = genFridge();
+		// localStorage.setItem("fridge", JSON.stringify(items));
+		// fridge = items;
 	}
 
 	displayFridge();

@@ -6,6 +6,5 @@ $(document).ready(function() {
 		console.log("Logging in!")
 		localStorage.setItem("loggedIn", 0);
 		window.location = "index.html"
-	})
-
+	});
 });

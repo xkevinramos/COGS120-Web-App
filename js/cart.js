@@ -16,16 +16,16 @@ function retrieveCart() {
 
 	// If there are items, parses the items retrieved.
 	if (localCart && localCart != "[]") {
-		console.log("There are items!");
+		console.log("There are items in the cart!");
 		cart = JSON.parse(localCart);
 	}
 
 	// Otherwise, fill localStorage with the dummy list.
 	else {
-		console.log("There are no items!");
-		var items = genCart();
-		localStorage.setItem("cart", JSON.stringify(items));
-		cart = items;
+		console.log("There are no items in the cart!");
+		// var items = genCart();
+		// localStorage.setItem("cart", JSON.stringify(items));
+		// cart = items;
 	}
 
 	displayCart();

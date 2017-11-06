@@ -13,18 +13,23 @@ $(document).ready(function() {
 		console.log("Clicked!");
 
 		var toAdd = prompt("Enter an item");
-		console.log(toAdd);
+		if (toAdd != null && toAdd != "") {
+			console.log(toAdd);
 
-		fridge.push([1, toAdd]);
+			fridge.push([1, toAdd]);
 
-		// Gets the html element with the id fridgeList.
-		var fridgeList = $("#fridgeList");
+			// Gets the html element with the id fridgeList.
+			var fridgeList = $("#fridgeList");
 
-		// Appends the new item to the list.
-		var i = fridge.length - 1;
-		fridgeList.append("<li id=fridgeItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
-		$("#inc" + i).click(incQty);
-		$("#dec" + i).click(decQty);
+			// Appends the new item to the list.
+			var i = fridge.length - 1;
+			fridgeList.append("<li id=fridgeItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
+			$("#inc" + i).click(incQty);
+			$("#dec" + i).click(decQty);
+		}
+		else if (toAdd != null) {
+			alert("Please enter something valid");
+		}
 	});
 
 	// Assigns functionality to the save button.
@@ -40,9 +45,12 @@ function retrieveFridge() {
 	var localFridge = localStorage.getItem("fridge");
 
 	// If there are items, parses the items retrieved.
-	if (localFridge) {
-		console.log("There are items!");
+	if (localFridge && localFridge != "[]") {
+		console.log("There are items in the fridge!");
 		fridge = JSON.parse(localFridge);
+	}
+	else {
+		console.log("There are no items in the fridge!");
 	}
 
 	displayFridge();
