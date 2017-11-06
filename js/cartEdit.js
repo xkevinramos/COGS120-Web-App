@@ -13,6 +13,21 @@ $(document).ready(function() {
 		console.log("Clicked!");
 
 		var toAdd = prompt("Enter an item");
+
+		// Returns if user cancelled.
+		if (toAdd == null) {
+			return;
+		}
+
+		// Removes leading and trailing whitespaces.
+		toAdd = toAdd.trim();
+
+		// Returns if user did not enter any non-whitespace characters.
+		if (toAdd === "") {
+			alert("Please enter something valid");
+			return;
+		}
+
 		console.log(toAdd);
 
 		cart.push([1, toAdd]);
@@ -40,9 +55,12 @@ function retrieveCart() {
 	var localCart = localStorage.getItem("cart");
 
 	// If there are items, parses the items retrieved.
-	if (localCart) {
-		console.log("There are items!");
+	if (localCart && localCart != "[]") {
+		console.log("There are items in the cart!");
 		cart = JSON.parse(localCart);
+	}
+	else {
+		console.log("There are no items in the cart!");
 	}
 
 	displayCart();

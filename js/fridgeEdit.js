@@ -13,6 +13,21 @@ $(document).ready(function() {
 		console.log("Clicked!");
 
 		var toAdd = prompt("Enter an item");
+
+		// Returns if user cancelled.
+		if (toAdd == null) {
+			return;
+		}
+
+		// Removes leading and trailing whitespaces.
+		toAdd = toAdd.trim();
+
+		// Returns if user did not enter any non-whitespace characters.
+		if (toAdd === "") {
+			alert("Please enter something valid");
+			return;
+		}
+
 		console.log(toAdd);
 
 		fridge.push([1, toAdd]);
@@ -40,9 +55,12 @@ function retrieveFridge() {
 	var localFridge = localStorage.getItem("fridge");
 
 	// If there are items, parses the items retrieved.
-	if (localFridge) {
-		console.log("There are items!");
+	if (localFridge && localFridge != "[]") {
+		console.log("There are items in the fridge!");
 		fridge = JSON.parse(localFridge);
+	}
+	else {
+		console.log("There are no items in the fridge!");
 	}
 
 	displayFridge();
