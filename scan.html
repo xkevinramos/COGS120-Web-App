@@ -1,36 +1,47 @@
-<div class="row">
-	<div class="col-lg-6">
-		<div class="input-group">
-			<input id="scanner_input" class="form-control" placeholder="Click the button to scan an EAN..." type="text" /> 
-			<span class="input-group-btn"> 
-				<button class="btn btn-default" type="button" data-toggle="modal" data-target="#livestream_scanner">
-					<i class="fa fa-barcode"></i>
-				</button> 
-			</span>
-		</div><!-- /input-group -->
-	</div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-<div class="modal" id="livestream_scanner">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<h4 class="modal-title">Barcode Scanner</h4>
-			</div>
-			<div class="modal-body" style="position: static">
-				<div id="interactive" class="viewport"></div>
-				<div class="error"></div>
-			</div>
-			<div class="modal-footer">
-				<label class="btn btn-default pull-left">
-					<i class="fa fa-camera"></i> Use camera app
-					<input type="file" accept="image/*;capture=camera" capture="camera" class="hidden" />
-				</label>
-				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
+<section id="container" class="container">
+    <h3>Scan various barcodes continously</h3>
+    <p>
+        Be aware that not all combinations play together nicely. Some
+        codes do not have a checksum (e.g. ITF).
+    </p>
+    <div class="controls">
+        <button type="button" class="icon-barcode button scan">Start Scanning</button>
+        <div class="readers">
+            <label>
+                <span>EAN-13</span>
+                <input type="checkbox" checked name="ean_reader" />
+            </label>
+            <label>
+                <span>EAN-8</span>
+                <input type="checkbox" name="ean_8_reader" />
+            </label>
+            <label>
+                <span>UPC-E</span>
+                <input type="checkbox" name="upc_e_reader" />
+            </label>
+            <label>
+                <span>Code 39</span>
+                <input type="checkbox" checked name="code_39_reader" />
+            </label>
+            <label>
+                <span>Codabar</span>
+                <input type="checkbox" name="codabar_reader" />
+            </label>
+            <label>
+                <span>Code 128</span>
+                <input type="checkbox" checked name="code_128_reader" />
+            </label>
+            <label>
+                <span>Interleaved 2 of 5</span>
+                <input type="checkbox" name="i2of5_reader" />
+            </label>
+        </div>
+    </div>
+    <div class="overlay overlay--inline">
+        <div class="overlay__content">
+            <div class="overlay__close">X</div>
+            <ul class="results"></ul>
+        </div>
+    </div>
+</section>
+<ul class="results"></ul>
