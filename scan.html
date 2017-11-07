@@ -102,6 +102,7 @@
             });
             Quagga.onDetected(function (result) {
                 console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
+		window.location.replace("cart.html");
             });
         }
         // Start/stop scanner
@@ -112,8 +113,10 @@
 		document.getElementById("btn").value = "Click here to scan your item";
             } else {
                 startScanner();
+		document.getElementById("btn").style.visibility = "hidden";
 		// change button text
-		document.getElementById("btn").value = "Stop scanning";
+		//document.getElementById("btn").value = "Stop scanning";
+
             }
         }, false);
     </script>
