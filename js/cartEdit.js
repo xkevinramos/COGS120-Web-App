@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 		console.log(toAdd);
 
-		// Add to the cart
+		// Adds to the cart.
 		if (!inArray(toAdd, cart)) {
 
 			console.log("Adding the item!");
