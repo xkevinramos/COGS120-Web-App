@@ -48,12 +48,12 @@ body{
 }
 
 .changeButtons{
-	display: absolute;
-	margin: 0.75em 0.05em 0em 0.5em;
-	padding: 1em 0em 2em 0em;
+	display: inline;
+	margin: 0.75em 0em 0em 0.5em;
+	padding: 1.25em 0em 2em 0em;
 	width: 29.5%;
-	height: 3.5em;
-	font-size: 1.25em;
+	height: 70%;
+	font-size: 1em;
 	text-align: center;
 	border-radius: 1.5em;
 	border: none;
@@ -63,6 +63,11 @@ body{
 	text-decoration: none;
 	cursor: pointer;
 	font-family: 'Montserrat', sans-serif;
+}
+
+#backButton, #addButton{
+	padding-top: 1em;
+	font-size: 1.25em;
 }
 
 .famList{
@@ -110,23 +115,31 @@ body{
 	margin-right: 3em;
 }
 
+#list1{
+	margin-top: 9em;
+}
+
 .panelDefault{
 	margin-bottom: 1em;
 	border: 0.5em solid transparent;
 	border-radius: 1em;
 }
 
-#list1{
-	margin-top: 9em;
-}
-
-.listBox{
+.listTitle{
 	cursor: pointer;
 }
 
-.panelDefault, .listBox{
+.listTitle h4{
+	font-size: 150%;
+}
+
+.panelDefault, .listTitle{
 	background-color: white;
 	font-family: 'Montserrat', sans-serif;
+}
+
+.actualList1{
+	font-size: 1.5em;
 }
 
 a h4{
@@ -157,26 +170,41 @@ a:hover{
 }
 
 .addItem{
+	width: 7.5em;
 	border-radius: 0.5em;
 	cursor: pointer;
-	margin-right: 1em;
 	font-size: 1.25em;
-	padding: 0.5em;
+	padding: 0.25em 0.5em;
+	text-align: center;
 }
 
-.listFooter, form{
-	display: flex;
-    flex-direction: row;
+.form{
+	float: right;
+}
+
+.listFooter{
+	width: auto;
+	height: auto;
+	display: inline-block;
 }
 
 form{
-	width: 0;
+	width: auto;
 	text-align: center;
 	font-size: 1.25em;
-	padding-top: 0.5em;
+	padding-top: 0.25em;
 }
 
-form.revealForm{
-	width: 100%;
+.listFooter, form{
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-bottom: 0.5em;
 }
 
+input{
+	height: 1.5em;
+}
+
+form p{
+	width: 10em;
+}
