@@ -33,7 +33,7 @@ $(document).ready(function(){
 				newItem.setAttribute('id', description.value);*/
 				var addNewItem = '<p class = "item" id = "i' + index1 + index2 + '"><button class = "removeItem" id = "removeButton' + index1 + index2 + '">&times</button>' + inputVal + '</p>';
 				$("#actualList" + index1).appendChild(addNewItem);
-			}
+			} <!--dd-->
 		}
 	});
 });
