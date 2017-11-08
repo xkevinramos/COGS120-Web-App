@@ -23,10 +23,11 @@
     <!-- Div to show the scanner -->
     <div id="scanner-container"></div>
     <input type="button" id="btn" value="Click here to scan your item" />
+    <a href="cart.html">
+    	<button>Return to cart</button>
+    </a>
 
     <!-- Include the image-diff library -->
-    <!--<script src="quagga.min.js"></script> -->
-    <!--<script src="/Users/Kevin/COGS-120/COGS120-Web-App/node_modules/quagga/dist/quagga.min.js"></script>-->
     <script src="quagga.min.js"></script>
 
     <script>
@@ -102,6 +103,7 @@
             });
             Quagga.onDetected(function (result) {
                 console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
+		window.location.replace("cart.html");
             });
         }
         // Start/stop scanner
@@ -112,8 +114,7 @@
 		document.getElementById("btn").value = "Click here to scan your item";
             } else {
                 startScanner();
-		// change button text
-		document.getElementById("btn").value = "Stop scanning";
+		document.getElementById("btn").style.visibility = "hidden";
             }
         }, false);
     </script>
