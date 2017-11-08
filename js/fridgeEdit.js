@@ -12,7 +12,8 @@ $(document).ready(function() {
 
 		console.log("Clicked!");
 
-		var toAdd = prompt("Enter an item");
+		// var toAdd = prompt("Enter an item");
+		var toAdd = document.getElementById("item").value;
 
 		// Returns if user cancelled.
 		if (toAdd == null) {
@@ -30,16 +31,32 @@ $(document).ready(function() {
 
 		console.log(toAdd);
 
-		fridge.push([1, toAdd]);
+		// Adds to the fridge.
+		if (!inArray(toAdd, fridge)) {
 
-		// Gets the html element with the id fridgeList.
-		var fridgeList = $("#fridgeList");
+			console.log("Adding the item!");
 
-		// Appends the new item to the list.
-		var i = fridge.length - 1;
-		fridgeList.append("<li id=fridgeItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
-		$("#inc" + i).click(incQty);
-		$("#dec" + i).click(decQty);
+			fridge.push([1, toAdd]);
+
+			// Gets the html element with the id fridgeList.
+			var fridgeList = $("#fridgeList");
+
+			// Appends the new item to the list.
+			var i = fridge.length - 1;
+			fridgeList.append("<li id=fridgeItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
+			$("#inc" + i).click(incQty);
+			$("#dec" + i).click(decQty);
+		}
+		else {
+
+			console.log("Incrementing item!");
+
+			var i = indexInArray(toAdd, fridge);
+			var qty = ++fridge[indexInArray(toAdd, fridge)][0];
+			$("#fridgeItem" + i).html("<button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> " + qty + " "+ toAdd);
+			$("#inc" + i).click(incQty);
+			$("#dec" + i).click(decQty);
+		}
 	});
 
 	// Assigns functionality to the save button.
@@ -113,4 +130,22 @@ function incQty() {
 	fridge[index][0]++;
 
 	displayFridge();
+}
+
+function inArray(item, arr) {
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i][1] === item) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function indexInArray(item, arr) {
+	for (var i = 0; i< arr.length; i++) {
+		if (arr[i][1] === item) {
+			return i;
+		}
+	}
+	return -1;
 }

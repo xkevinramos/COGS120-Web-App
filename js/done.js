@@ -30,8 +30,25 @@ function cartToFridge() {
 			fridge = JSON.parse(localFridge);
 		}	
 
-		fridge = fridge.concat(cart);
+		// Iterates through the cart.
+		for (var i = 0; i < cart.length; i++) {
 
+			var item = cart[i][1];
+
+			// If the item exists in the fridge, increments the quantity.
+			if (inArray(item, fridge)) {
+				fridge[indexInArray(item, fridge)][0]++;
+			}
+
+			// Otherwise, pushes the tiem to the fridge.
+			else {
+				fridge.push(cart[i]);
+			}
+		}
+
+		// fridge = fridge.concat(cart);
+
+		// Saves everything back out to localStorage.
 		localStorage.setItem("cart", JSON.stringify([]));
 		localStorage.setItem("fridge", JSON.stringify(fridge));
 	}
@@ -39,4 +56,22 @@ function cartToFridge() {
 	else {
 		console.log("There are no items in the cart!");
 	}
+}
+
+function inArray(item, arr) {
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i][1] === item) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function indexInArray(item, arr) {
+	for (var i = 0; i< arr.length; i++) {
+		if (arr[i][1] === item) {
+			return i;
+		}
+	}
+	return -1;
 }

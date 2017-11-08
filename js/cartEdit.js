@@ -12,7 +12,8 @@ $(document).ready(function() {
 
 		console.log("Clicked!");
 
-		var toAdd = prompt("Enter an item");
+		// var toAdd = prompt("Enter an item");
+		var toAdd = document.getElementById("item").value;
 
 		// Returns if user cancelled.
 		if (toAdd == null) {
@@ -30,7 +31,7 @@ $(document).ready(function() {
 
 		console.log(toAdd);
 
-		// Add to the cart
+		// Adds to the cart.
 		if (!inArray(toAdd, cart)) {
 
 			console.log("Adding the item!");
@@ -53,6 +54,8 @@ $(document).ready(function() {
 			var i = indexInArray(toAdd, cart);
 			var qty = ++cart[indexInArray(toAdd, cart)][0];
 			$("#cartItem" + i).html("<button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> " + qty + " " + toAdd);
+			$("#inc" + i).click(incQty);
+			$("#dec" + i).click(decQty);
 		}
 	});
 
