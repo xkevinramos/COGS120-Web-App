@@ -12,7 +12,8 @@ $(document).ready(function() {
 
 		console.log("Clicked!");
 
-		var toAdd = prompt("Enter an item");
+		// var toAdd = prompt("Enter an item");
+		var toAdd = document.getElementById("item").value;
 
 		// Returns if user cancelled.
 		if (toAdd == null) {
@@ -53,6 +54,8 @@ $(document).ready(function() {
 			var i = indexInArray(toAdd, fridge);
 			var qty = ++fridge[indexInArray(toAdd, fridge)][0];
 			$("#fridgeItem" + i).html("<button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> " + qty + " "+ toAdd);
+			$("#inc" + i).click(incQty);
+			$("#dec" + i).click(decQty);
 		}
 	});
 
