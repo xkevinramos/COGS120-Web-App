@@ -1,5 +1,7 @@
-"use strict";
-var toListToNum = document.getElementsByClassName("buttonToList");
+$(document).ready(function(){
+	"use strict";
+	
+	var toListToNum = document.getElementsByClassName("buttonToList");
 	for (var i = 0; i < toListToNum.length; i++) {
     	toListToNum[i].onclick = function(){
 		var list = this.nextElementSibling;
@@ -10,3 +12,8 @@ var toListToNum = document.getElementsByClassName("buttonToList");
 			}
 		};
 	}
+	$("form").hide();
+	$(".addItem").click(function(){
+		$("form").toggle();
+	});
+});

@@ -117,7 +117,7 @@ body{
 }
 
 #list1{
-	margin-top: 27.5%;
+	margin-top: 9em;
 }
 
 .listBox{
@@ -154,5 +154,29 @@ a:hover{
 	background-color: white;
 	display: none;
 	position: relative;
+}
+
+.addItem{
+	border-radius: 0.5em;
+	cursor: pointer;
+	margin-right: 1em;
+	font-size: 1.25em;
+	padding: 0.5em;
+}
+
+.listFooter, form{
+	display: flex;
+    flex-direction: row;
+}
+
+form{
+	width: 0;
+	text-align: center;
+	font-size: 1.25em;
+	padding-top: 0.5em;
+}
+
+form.revealForm{
+	width: 100%;
 }
 
