@@ -70,6 +70,10 @@ body{
 	font-size: 1.25em;
 }
 
+#removeButton{
+	height: 67.5%;
+}
+
 .famList{
 	width: 95%;
 	height: auto;
