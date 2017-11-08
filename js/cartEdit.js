@@ -30,16 +30,30 @@ $(document).ready(function() {
 
 		console.log(toAdd);
 
-		cart.push([1, toAdd]);
+		// Add to the cart
+		if (!inArray(toAdd, cart)) {
 
-		// Gets the html element with the id cartList.
-		var cartList = $("#cartList");
+			console.log("Adding the item!");
 
-		// Appends the new item to the list.
-		var i = cart.length - 1;
-		cartList.append("<li id=cartItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
-		$("#inc" + i).click(incQty);
-		$("#dec" + i).click(decQty);
+			cart.push([1, toAdd]);
+
+			// Gets the html element with the id cartList.
+			var cartList = $("#cartList");
+
+			// Appends the new item to the list.
+			var i = cart.length - 1;
+			cartList.append("<li id=cartItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
+			$("#inc" + i).click(incQty);
+			$("#dec" + i).click(decQty);
+		}
+		else {
+
+			console.log("Incrementing item!");
+
+			var i = indexInArray(toAdd, cart);
+			var qty = ++cart[indexInArray(toAdd, cart)][0];
+			$("#cartItem" + i).html("<button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> " + qty + " " + toAdd);
+		}
 	});
 
 	// Assigns functionality to the save button.
@@ -113,4 +127,22 @@ function incQty() {
 	cart[index][0]++;
 
 	displayCart();
+}
+
+function inArray(item, arr) {
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i][1] === item) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function indexInArray(item, arr) {
+	for (var i = 0; i< arr.length; i++) {
+		if (arr[i][1] === item) {
+			return i;
+		}
+	}
+	return -1;
 }
